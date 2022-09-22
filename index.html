@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <!-- Favicon Link -->
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png" />
+    <!-- Font Awesome CDNJS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="./normalize.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Custom Script -->
+    <script src="./script/script.js"></script>
+    <div class="container">
+      <div class="card">
+        <h1>
+          <form>
+            <div class="form-control">
+              <label for="username">User Name</label>
+              <input
+                type="text"
+                id="username"
+                name=""
+                placeholder="Enter your Name"
+              />
+            </div>
+            <div class="form-control">
+              <label for="email">Email Address</label>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Enter your Email"
+              />
+            </div>
+            <div class="form-control">
+              <label for="mobile">Mobile Number</label>
+              <input
+                type="number"
+                id="mobile"
+                name="mobile"
+                placeholder="Enter your Mobile Number"
+              />
+            </div>
+            <div class="form-control">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Type your Password"
+              />
+            </div>
+            <div class="form-control">
+              <label for="confirm-password">Confirm Password</label>
+              <input
+                type="text"
+                id="confirm-password"
+                name="confirm-password"
+                placeholder="Confirm your Password"
+              />
+            </div>
+            <button><div class="btn">Submit</div></button>
+          </form>
+        </h1>
+      </div>
+    </div>
+  </body>
+</html>
