@@ -52,7 +52,7 @@ li {
 .btn {
   display: inline-block;
   border-radius: 8px;
-  padding: 0.8em 1.5rem;
+  padding: 0.25rem 0.5rem;
   margin-top: 0.5rem;
   text-transform: capitalize;
   font-size: 1.25rem;
@@ -62,6 +62,7 @@ li {
   background-color: #1c2042;
   color: #fff;
   border: 2px solid #1c2042;
+  width: 100%;
 }
 
 .row {
@@ -91,28 +92,55 @@ li {
   margin-top: 1rem;
   margin-bottom: 1.5rem;
 }
+.form-control {
+  position: relative;
+}
 
-label,
-input {
+.form-control label,
+.form-control input {
   display: block;
   width: 100%;
   margin-bottom: 0.75rem;
   margin-top: 0.75rem;
 }
 
-label {
+.form-control label {
   font-size: 1.25rem;
   font-weight: 700;
 }
 
-input {
+.form-control input {
   padding: 1rem 1.25rem;
   font-size: 1.25rem;
   font-size: 600;
   border-radius: 10px;
   outline: none;
-  border: none;
 }
+.form-control.error input {
+  border-color: red;
+}
+
+.form-control.success input {
+  border-color: green;
+}
+
+.form-control small {
+  color: red;
+  font-size: 1.2rem;
+  /* position: absolute;
+  bottom: -1.5rem;
+  left: 0.5rem; */
+  margin-bottom: 0.5rem;
+  visibility: hidden;
+}
+.form-control.error small {
+  visibility: visible;
+}
+
+/* .form-control input:focus {
+  outline: 1rem;
+  border-color: var(--clr-white);
+} */
 
 .btn-light {
   background-color: var(--clr-white);
@@ -125,13 +153,11 @@ input {
   background-color: transparent;
   color: var(--clr-white);
 }
-
 .btn-block {
   display: block;
   width: 100%;
-  margin: 1.5rem auto;
+  margin: 1.5rem, auto;
 }
-
 @media screen and (max-width: 768px) {
   .card {
     width: 23rem;
