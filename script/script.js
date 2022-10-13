@@ -101,13 +101,26 @@ const checkRequired = function (arr) {
 };
 const checkLength = function (el, min, max) {
   if (el.value.length < min) {
-    const formControlEl = el.parentElement;
-    formControlEl.classList.add("error");
-    const smallEl = formControlEl.querySelector("small");
-    smallEl.textContent = `should have ${min} characters`;
-  } else if (el.value.length > min) {
-    const smallEl = formControlEl.querySelector("small");
-    smallEl.textContent = `should not have more than ${min} characters`;
+    showError(el, `${el.name} should have ${min} characters`);
+  } else if (el.value.length > max) {
+    showError(el, `${el.name} should not be more than ${max} characters`);
+  } else {
+    showSuccess(el);
+  }
+};
+
+const passwordMatch = function (elOne, elTwo) {
+  if (elOne.value === "" || elTwo.value === "") {
+    showError(elOne, "New password is mandatory");
+    showError(elTwo, "Confirm password is mandatory");
+  } else {
+    if (elOne.value === elTwo.value) {
+      showSuccess(elOne);
+      showSuccess(elTwo);
+    } else {
+      showError(elOne, "Password do not Match");
+      showError(elTwo, "Password do not Match");
+    }
   }
 };
 
@@ -117,4 +130,6 @@ formEl.addEventListener("submit", (e) => {
   checkLength(usernameEl, 5, 12);
   checkLength(mobileEl, 10, 10);
   checkLength(newPasswordEl, 8, 15);
+  passwordMatch(newPasswordEl, confirmPasswordEl);
 });
+// So far we have not wrote any logic for email
